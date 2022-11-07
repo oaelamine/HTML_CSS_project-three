@@ -317,6 +317,7 @@ a {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
 }
 .articles .articles-content .container .col {
   flex-basis: calc(25% - 40px);
@@ -329,6 +330,16 @@ a {
   -webkit-box-shadow: 0 2px 15px #ddd;
   -moz-box-shadow: 0 2px 15px #ddd;
   box-shadow: 0 2px 15px #ddd;
+}
+@media (max-width: 1199px) {
+  .articles .articles-content .container .col {
+    flex-basis: calc(33% - 40px);
+  }
+}
+@media (max-width: 991px) {
+  .articles .articles-content .container .col {
+    flex-basis: calc(50% - 40px);
+  }
 }
 .articles .articles-content .container .col:hover {
   animation-name: up;
