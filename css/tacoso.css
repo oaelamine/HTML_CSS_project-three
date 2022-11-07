@@ -3,7 +3,7 @@
   --main-color: #2196f3;
   --main-color-alt: #1787e0;
   --main-trensition: 0.3s;
-  --main-section-padding: 60px;
+  --main-section-padding: 100px;
   --main-paragraph-color: #777;
 }
 /* END VARIABLE */
@@ -60,15 +60,12 @@ a {
 /* START COMPONENTS */
 /* HEADER COMPONENT START */
 .headeer-section {
-  margin-top: 300px;
-  padding-top: var(--main-section-padding);
-  padding-bottom: var(--main-section-padding);
   text-align: center;
 }
 .headeer-section .container h1 {
   position: relative;
   text-transform: uppercase;
-  border: 1px solid black;
+  border: 2px solid black;
   width: fit-content;
   margin: 0 auto;
   padding: 10px 20px;
@@ -185,7 +182,6 @@ a {
 /* END HEADER */
 /* START LANDING */
 .landing {
-  padding-top: var(--main-section-padding);
   padding-bottom: var(--main-section-padding);
 
   position: relative;
@@ -198,13 +194,12 @@ a {
   width: 100%;
   height: 90vh;
   background-color: #eeebeb;
-  clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 0% 100%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 65%, 0% 90%);
 }
 
 .landing .container {
   display: flex;
   align-items: center;
-  padding-top: 100px;
 }
 
 .landing .container .text {
@@ -281,7 +276,7 @@ a {
   font-size: 30px;
   left: 50%;
   transform: translateX(-50%);
-  bottom: -250px;
+  bottom: -100px;
   color: var(--main-color);
   animation-name: next;
   animation-duration: 2s;
@@ -290,19 +285,19 @@ a {
 }
 @keyframes next {
   0% {
-    bottom: -250px;
+    bottom: -100px;
   }
   10% {
-    bottom: -230px;
+    bottom: -80px;
   }
   20% {
-    bottom: -250px;
+    bottom: -100px;
   }
   30% {
-    bottom: -230px;
+    bottom: -80px;
   }
   40% {
-    bottom: -250px;
+    bottom: -100px;
   }
 }
 /* ARRWO END */
