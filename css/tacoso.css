@@ -61,36 +61,72 @@ a {
 /* HEADER COMPONENT START */
 .headeer-section {
   text-align: center;
-}
-.headeer-section .container h1 {
   position: relative;
-  text-transform: uppercase;
   border: 2px solid black;
   width: fit-content;
   margin: 0 auto;
   padding: 10px 20px;
+  transition: 0.5s;
 }
-.headeer-section .container h1::before {
+.headeer-section:hover {
+  color: white;
+  border-color: white;
+  transition-delay: 0.5s;
+}
+.headeer-section h1 {
+  text-transform: uppercase;
+  font-size: 30px;
+  margin: 0;
+}
+.headeer-section::before,
+.headeer-section::after {
   content: "";
   position: absolute;
-  width: 15px;
-  height: 15px;
+  width: 12px;
+  height: 12px;
   background-color: var(--main-color);
   border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: -1;
+}
+.headeer-section::before {
   left: -30px;
-  top: 50%;
-  transform: translateY(-50%);
 }
-.headeer-section .container h1::after {
-  content: "";
-  position: absolute;
-  width: 15px;
-  height: 15px;
-  background-color: var(--main-color);
-  border-radius: 50%;
+.headeer-section::after {
   right: -30px;
-  top: 50%;
-  transform: translateY(-50%);
+}
+.headeer-section:hover::before {
+  animation: box-fill-left 0.5s linear forwards;
+}
+@keyframes box-fill-left {
+  50% {
+    left: 0;
+    width: 12px;
+    height: 12px;
+  }
+  100% {
+    left: 0;
+    border-radius: 0%;
+    height: 100%;
+    width: 50%;
+  }
+}
+.headeer-section:hover::after {
+  animation: box-fill-right 0.5s linear forwards;
+}
+@keyframes box-fill-right {
+  50% {
+    right: 0;
+    width: 12px;
+    height: 12px;
+  }
+  100% {
+    right: 0;
+    border-radius: 0%;
+    height: 100%;
+    width: 50%;
+  }
 }
 /* HEADER COMPONENT END */
 /* END COMPONENTS */
