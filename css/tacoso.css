@@ -358,19 +358,20 @@ a {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
 }
 .articles .articles-content .container .col {
   flex-basis: calc(25% - 40px);
-  margin-right: 40px;
   margin-top: 40px;
   position: relative;
-  transition: 0.5s;
   border-radius: 6px;
+  overflow: hidden;
   /* shadow */
-  -webkit-box-shadow: 0 2px 15px #ddd;
-  -moz-box-shadow: 0 2px 15px #ddd;
-  box-shadow: 0 2px 15px #ddd;
+  -webkit-box-shadow: 0 2px 15px rgba(0, 0, 0, 10%);
+  -moz-box-shadow: 0 2px 15px rgba(0, 0, 0, 10%);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 10%);
+  background-color: white;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 @media (max-width: 1199px) {
   .articles .articles-content .container .col {
@@ -382,24 +383,20 @@ a {
     flex-basis: calc(50% - 40px);
   }
 }
-.articles .articles-content .container .col:hover {
-  animation-name: up;
-  animation-duration: 0.3s;
-  animation-timing-function: ease;
-  animation-fill-mode: forwards;
+@media (max-width: 767px) {
+  .articles .articles-content .container .col {
+    flex-basis: 100%;
+  }
 }
-@keyframes up {
-  0% {
-    top: 0px;
-  }
-  100% {
-    top: -10px;
-  }
+.articles .articles-content .container .col:hover {
+  transform: translateY(-10px);
+  -webkit-box-shadow: 0 2px 15px rgba(0, 0, 0, 20%);
+  -moz-box-shadow: 0 2px 15px rgba(0, 0, 0, 20%);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 20%);
 }
 .articles .articles-content .container .col img {
+  width: 100%; /* in case you add an smale image the width well be adjested to 100% */
   max-width: 100%;
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
 }
 .articles .articles-content .container .col .text {
   padding: 20px;
