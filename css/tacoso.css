@@ -1017,21 +1017,32 @@ a {
   padding-bottom: var(--main-section-padding);
   position: relative;
 }
-/* .last-event img:first-child {
-  position: absolute;
-  top: 0;
-  right: 0;
-} */
 .last-event .container {
   margin-top: 80px;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 .last-event .container img {
   max-width: 450px;
 }
+@media (max-width: 991PX) {
+  .last-event .container img {
+    display: none;
+  }
+  .last-event .container .info {
+    width:100% ;
+  }
+}
 .last-event .container .info {
   text-align: center;
+  width: calc(100% - 450px);
+  margin: 0 auto;
+}
+@media (max-width: 991PX) {
+  .last-event .container .info {
+    width:100%;
+  }
 }
 .last-event .container .info .time {
   display: flex;
@@ -1070,4 +1081,72 @@ a {
   color: var(--main-paragraph-color);
   line-height: 1.8;
 }
+.email {
+  margin: 80px auto 0;
+  padding: 30px 40PX;
+  background-color: #f6f5f5;
+  border-radius: 50PX;
+}
+.email input[type="email"] {
+  width: 400px;
+  border: none;
+  padding: 20px ;
+  border-radius: 50PX;
+  margin-right: 20PX;
+}
+.email input[type="submit"] {
+  background-color: var(--main-color);
+  border: none;
+  padding: 20px;
+  color: white;
+  font-weight: bold;
+  border-radius: 50PX;
+}
+
+@media (max-width: 767PX) {
+  .email {
+    margin: 80px auto 0;
+    padding: 20px;
+    background-color: #f6f5f5;
+    border-radius: 0;
+  }
+  .email input[type="email"] {
+    width: 100%;
+    border: none;
+    padding: 20px ;
+    border-radius: 0;
+    margin-right: 0;
+  }
+  .email input[type="submit"] {
+    background-color: var(--main-color);
+    width: 100%;
+    border: none;
+    padding: 20px;
+    color: white;
+    font-weight: bold;
+    border-radius: 0;
+    margin-top: 20px;
+  }
+}
+.last-event .dots {
+  background-image: url(../images/dots.png);
+  background-repeat: no-repeat;
+  height: 186px;
+  width: 204px;
+  position: absolute;
+}
+.last-event .up-dot {
+  top: 200PX;
+  right: 0;
+}
+.last-event .down-dot {
+  bottom: 180PX;
+  left: 0;
+}
+@media (max-width: 767PX) {
+  .last-event .dots{
+    display: none;
+  }
+}
+
 /* END LATEST EVENTS */
